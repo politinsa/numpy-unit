@@ -14,5 +14,5 @@ python:
   version: 3.6
   install:
     - requirements: docs/requirements.txt
-  sphinx:
-    fail_on_warning: false
+sphinx:
+  fail_on_warning: false
