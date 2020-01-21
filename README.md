@@ -1,5 +1,6 @@
 # numpy-unit
 
+[![Build Status](https://travis-ci.org/politinsa/numpy-unit.svg?branch=master)](https://travis-ci.org/politinsa/numpy-unit)
 [![Documentation Status](https://readthedocs.org/projects/numpy-unit/badge/?version=latest)](https://numpy-unit.readthedocs.io/en/latest/?badge=latest)  
 
 This package provides a tool for scientific computing by keeping track of the unit when performing classical operations on a multi-dimensionnal array with (almost) no extra-cost comparing to the standard numpy array.  

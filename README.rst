@@ -1,7 +1,7 @@
 numpy-unit
 ==========
 
-|Documentation Status|
+|Build Status| |Documentation Status|
 
 | This package provides a tool for scientific computing by keeping track
   of the unit when performing classical operations on a
@@ -87,5 +87,7 @@ Features
    -  [ ] std
    -  [ ] ...
 
+.. |Build Status| image:: https://travis-ci.org/politinsa/numpy-unit.svg?branch=master
+   :target: https://travis-ci.org/politinsa/numpy-unit
 .. |Documentation Status| image:: https://readthedocs.org/projects/numpy-unit/badge/?version=latest
    :target: https://numpy-unit.readthedocs.io/en/latest/?badge=latest
