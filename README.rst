@@ -1,6 +1,8 @@
 numpy-unit
 ==========
 
+|Documentation Status|
+
 | This package provides a tool for scientific computing by keeping track
   of the unit when performing classical operations on a
   multi-dimensionnal array with (almost) no extra-cost comparing to the
@@ -84,3 +86,6 @@ Features
    -  [ ] mean
    -  [ ] std
    -  [ ] ...
+
+.. |Documentation Status| image:: https://readthedocs.org/projects/numpy-unit/badge/?version=latest
+   :target: https://numpy-unit.readthedocs.io/en/latest/?badge=latest

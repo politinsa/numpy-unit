@@ -1,5 +1,7 @@
 # numpy-unit
 
+[![Documentation Status](https://readthedocs.org/projects/numpy-unit/badge/?version=latest)](https://numpy-unit.readthedocs.io/en/latest/?badge=latest)  
+
 This package provides a tool for scientific computing by keeping track of the unit when performing classical operations on a multi-dimensionnal array with (almost) no extra-cost comparing to the standard numpy array.  
 The `ArrayUnit` class supports every operation a numpy.ndarray can handle (because it is a derived class of numpy.ndarray) but the operators are overloaded in order to perform transformations on the `Unit` contained in every `ArrayUnit`.
 
