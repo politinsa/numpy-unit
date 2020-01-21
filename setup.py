@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf8") as fh:
 print(setuptools.find_packages())
 setuptools.setup(
     name="numpy_unit",
-    version="0.1.0",
+    version="0.1.1",
     author="Politinsa",
     description="A package providing an unit system for numpy multidimensionnal arrays.",
     long_description=long_description,
