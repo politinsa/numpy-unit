@@ -9,6 +9,9 @@
 This package provides a tool for scientific computing by keeping track of the unit when performing classical operations on a multi-dimensionnal array with (almost) no extra-cost comparing to the standard numpy array.  
 The `ArrayUnit` class supports every operation a numpy.ndarray can handle (because it is a derived class of numpy.ndarray) but the operators are overloaded in order to perform transformations on the `Unit` contained in every `ArrayUnit`.
 
+## Install
+
+    pip install numpy-unit
 
 ## Examples
 
@@ -65,3 +68,4 @@ Doc of the master branch on [readthedocs.io](https://numpy-unit.readthedocs.io/e
      - [ ] mean
      - [ ] std
      - [ ] ...
+- [ ] conda release

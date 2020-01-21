@@ -12,6 +12,13 @@ numpy-unit
   operators are overloaded in order to perform transformations on the
   ``Unit`` contained in every ``ArrayUnit``.
 
+Install
+-------
+
+::
+
+    pip install numpy-unit
+
 Examples
 --------
 
@@ -86,6 +93,8 @@ Features
    -  [ ] mean
    -  [ ] std
    -  [ ] ...
+
+-  [ ] conda release
 
 .. |Build Status| image:: https://travis-ci.org/politinsa/numpy-unit.svg?branch=master
    :target: https://travis-ci.org/politinsa/numpy-unit
