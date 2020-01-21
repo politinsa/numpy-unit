@@ -1,7 +1,7 @@
 numpy-unit
 ==========
 
-|Build Status| |Documentation Status|
+|Build Status| |Documentation Status| |codecov|
 
 | This package provides a tool for scientific computing by keeping track
   of the unit when performing classical operations on a
@@ -91,3 +91,5 @@ Features
    :target: https://travis-ci.org/politinsa/numpy-unit
 .. |Documentation Status| image:: https://readthedocs.org/projects/numpy-unit/badge/?version=latest
    :target: https://numpy-unit.readthedocs.io/en/latest/?badge=latest
+.. |codecov| image:: https://codecov.io/gh/politinsa/numpy-unit/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/politinsa/numpy-unit

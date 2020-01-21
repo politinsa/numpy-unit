@@ -14,5 +14,6 @@ python:
   version: 3.7
   install:
     - requirements: docs/requirements.txt
+    - requirements: numpy_unit/requirements.txt
 sphinx:
   fail_on_warning: false
