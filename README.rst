@@ -62,7 +62,7 @@ Development
 -----------
 
 Doc of the master branch on
-`github.io <https://politinsa.github.io/numpy-unit/>`__
+`readthedocs.io <https://numpy-unit.readthedocs.io/en/latest/>`__.
 
 Features
 --------

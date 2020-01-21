@@ -45,7 +45,7 @@ The following rules applied (where {op} is one of the following: [``+``, ``-``, 
 * An ArrayUnit is equal to a numpy.ndarray if and only if their underlying arrays are equal (np.array_equal) and the Unit of the ArrayUnit is empty.
 
 ## Development
-Doc of the master branch on [github.io](https://politinsa.github.io/numpy-unit/)
+Doc of the master branch on [readthedocs.io](https://numpy-unit.readthedocs.io/en/latest/).
 
 ## Features
 - [x] Basic unit system handling multiplication, division, modulo and power
