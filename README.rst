@@ -1,7 +1,7 @@
 numpy-unit
 ==========
 
-|Build Status| |Documentation Status| |codecov| |license|
+|Build Status| |Documentation Status| |PyPI version| |codecov| |license|
 
 | This package provides a tool for scientific computing by keeping track
   of the unit when performing classical operations on a
@@ -100,6 +100,8 @@ Features
    :target: https://travis-ci.org/politinsa/numpy-unit
 .. |Documentation Status| image:: https://readthedocs.org/projects/numpy-unit/badge/?version=latest
    :target: https://numpy-unit.readthedocs.io/en/latest/?badge=latest
+.. |PyPI version| image:: https://badge.fury.io/py/numpy-unit.svg
+   :target: https://badge.fury.io/py/numpy-unit
 .. |codecov| image:: https://codecov.io/gh/politinsa/numpy-unit/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/politinsa/numpy-unit
 .. |license| image:: https://img.shields.io/badge/license-Unlicense-blue

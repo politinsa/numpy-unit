@@ -21,6 +21,7 @@ class UnitTest(unittest.TestCase):
         self.assertNotEqual(self.m, self.c)
         self.assertEqual(self.m, self.m_)
         self.assertEqual(self.s, self.s)
+        self.assertFalse(Unit() == 5)
 
     def test_constructor(self):
         # from Unit
@@ -37,6 +38,10 @@ class UnitTest(unittest.TestCase):
         self.assertEqual(Unit(1), Unit())
         self.assertEqual(Unit([0,1,2]), Unit())
         self.assertEqual(Unit(lambda x: x), Unit())
+    
+    def test_repr(self):
+        self.assertEqual(str(Unit('a', 0)), str(Unit()))
+        self.assertEqual(str(Unit('a', 0.5)), u'a^0.5')
 
     def test_mul(self):
         self.assertEqual(self.m * self.s * self.c, self.c * self.m * self.s)
@@ -112,10 +117,17 @@ class ArrayUnitTest(unittest.TestCase):
         self.b = ArrayUnit(self.arr2, self.s)
 
     def test_eq(self):
+        self.assertFalse(self.a == 5)
+        self.assertNotEqual(self.a, 5)
         self.assertEqual(self.a, self.a)
         self.assertNotEqual(self.a, self.b)
+        self.assertNotEqual(self.a, np.zeros((5, 5, 5)))
         self.assertEqual(self.arr1, ArrayUnit(self.arr1, Unit()))
         self.assertEqual(ArrayUnit(self.arr1, Unit()), ArrayUnit(self.arr1, None))
+    
+    def test_repr(self):
+        self.assertTrue(str(ArrayUnit([])) == "[] ∅")
+
     
     def test_add(self):
         self.assertEqual(self.a + 1, 1 + self.a)
@@ -181,6 +193,7 @@ class ArrayUnitTest(unittest.TestCase):
         self.assertEqual(self.a ** 4, self.a * self.a * self.a * self.a)
         self.assertEqual(self.a ** 0.5, ArrayUnit(np.sqrt(self.arr1), Unit('m', 0.5)))
         self.assertEqual(self.b ** -5, 1 / (self.b ** 5))
+
 
 
 unittest.main()
