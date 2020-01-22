@@ -217,6 +217,15 @@ class ArrayUnit(np.ndarray):
     [ 1.  2.  3.  4.  5.  6.  7.  8.  9. 10.] m
     =
     [ 1.  2.  3.  4.  5.  6.  7.  8.  9. 10.] m⁻¹·s⁻²
+    >>> 
+    >>> b = ArrayUnit(np.random.random((2, 4)), Unit('banana'))
+    >>> b
+    ArrayUnit([[0.7257637 , 0.04797737, 0.88016759, 0.69852201],
+       [0.12102613, 0.07913234, 0.38511503, 0.3645144 ]]) banana
+    >>> b.mean(axis=0)
+    ArrayUnit([0.42339491, 0.06355485, 0.63264131, 0.5315182 ]) banana
+    >>> b.prod(axis=1)
+    ArrayUnit([0.02140805, 0.00134443]) banana⁴
 
 
     """
@@ -336,3 +345,16 @@ class ArrayUnit(np.ndarray):
         res = self._make_op(other, '__ipow__', lambda i, o: i, check=False)
         res.unit = self.unit ** other
         return res
+    
+    def var(self, axis=None, dtype=None, out=None, ddof=0, keepdims=False):
+        res = super(ArrayUnit, self).var(axis, dtype, out, ddof, keepdims)
+        return ArrayUnit(res, self.unit**2)
+    
+    def prod(self, axis=None, dtype=None, out=None, keepdims=False, initial=1, where=True):
+        res = super(ArrayUnit, self).prod(axis, dtype, out, keepdims, initial, where)
+        unit = Unit()
+        if axis is None:
+            unit = self.unit ** self.size
+        else:
+            unit = self.unit ** self.shape[axis]
+        return ArrayUnit(res, unit)

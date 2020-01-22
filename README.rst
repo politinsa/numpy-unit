@@ -12,6 +12,14 @@ numpy-unit
   operators are overloaded in order to perform transformations on the
   ``Unit`` contained in every ``ArrayUnit``.
 
+Because **any ``ArrayUnit`` is a numpy.ndarray**, classical ndarray
+methods work and returns an ``ArrayUnit`` whenever possible. It means
+that ``mean``, ``std``, ``var``, ``min``, ``max``, ``ravel``,
+``flatten``, ``fill``, ``reshape``, ``diagonal``, ``sum``, ``prod``
+behaves as you expect and the result is encapsulated in an ``ArrayUnit``
+with the ``Unit`` corresponding (:warning: ``var`` and ``prod`` do
+change the ``Unit``).
+
 Install
 -------
 
@@ -48,6 +56,16 @@ Examples
     [  1.   4.   9.  16.  25.  36.  49.  64.  81. 100.] s⁻²
     =
     [   1.    8.   27.   64.  125.  216.  343.  512.  729. 1000.] m·s⁻²
+    >>>
+    >>>
+    >>> b = ArrayUnit(np.random.random((2, 4)), Unit('banana'))
+    >>> b
+    ArrayUnit([[0.7257637 , 0.04797737, 0.88016759, 0.69852201],
+               [0.12102613, 0.07913234, 0.38511503, 0.3645144 ]]) banana
+    >>> b.mean(axis=0)
+    ArrayUnit([0.42339491, 0.06355485, 0.63264131, 0.5315182 ]) banana
+    >>> b.prod(axis=1)
+    ArrayUnit([0.02140805, 0.00134443]) banana⁴
 
 The following rules applied (where {op} is one of the following: [``+``,
 ``-``, ``*``, ``/``, ``//``, ``%``]):
@@ -74,13 +92,14 @@ Doc of the master branch on
 Features
 --------
 
--  [x] Basic unit system handling multiplication, division, modulo and
-   power
+-  [x] Basic unit system handling comparison, multiplication, division,
+   modulo and power
 -  [x] ArrayUnit wrapper for unit + ndarray
 -  [x] Operators on ArrayUnit (and their variants **r{op}** and
    **i{op}**)
 
-   -  [x] eq, ne
+   -  [ ] eq, ne // how to deal with this? Current implementation should
+      be changed because we can't use array mask now
    -  [x] add
    -  [x] sub
    -  [x] mul
@@ -88,13 +107,14 @@ Features
    -  [x] mod
    -  [x] pow (but not **rpow**)
 
--  [ ] Basic ndarray function
+-  [x] Rewrite ndarray methods changing the Unit
 
-   -  [ ] mean
-   -  [ ] std
-   -  [ ] ...
+   -  [x] var
+   -  [x] prod
 
 -  [ ] conda release
+-  [ ] push to a dev branch before master?! (not mandatory when no one
+   is using the package though)
 
 .. |Build Status| image:: https://travis-ci.org/politinsa/numpy-unit.svg?branch=master
    :target: https://travis-ci.org/politinsa/numpy-unit
